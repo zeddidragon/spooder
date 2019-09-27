@@ -4,5 +4,8 @@
   "description": "Does whatever a spooder can",
   "main": "src/index.coffee",
   "author": "Zeddy",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "watch": "coffee --compile --inline-map --watch -o build/ src/ & python -m SimpleHTTPServer"
+  }
 }
