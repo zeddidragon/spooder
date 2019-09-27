@@ -1,0 +1,8 @@
+{
+  "name": "spooder-boat",
+  "version": "1.0.0",
+  "description": "Does whatever a spooder can",
+  "main": "src/index.coffee",
+  "author": "Zeddy",
+  "license": "MIT"
+}
