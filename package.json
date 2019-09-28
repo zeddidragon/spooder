@@ -2,10 +2,10 @@
   "name": "spooder-boat",
   "version": "1.0.0",
   "description": "Does whatever a spooder can",
-  "main": "src/index.coffee",
+  "main": "src/index.js",
   "author": "Zeddy",
   "license": "MIT",
   "scripts": {
-    "watch": "coffee --compile --inline-map --watch -o build/ src/ & python -m SimpleHTTPServer"
+    "watch": "python -m SimpleHTTPServer"
   }
 }
