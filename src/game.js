@@ -16,13 +16,22 @@ function createScene() {
   )
   camera.attachControl(canvas, true)
 
-  const light1Pos = new BABYLON.Vector3(1, 1, 0)
+  const light1Pos = new BABYLON.Vector3(100, 100, 0)
   const light1 = new BABYLON.HemisphericLight('light', light1Pos, scene)
-  const light2Pos = new BABYLON.Vector3(0, 1, -1)
+  const light2Pos = new BABYLON.Vector3(0, 50, -50)
   const light2 = new BABYLON.PointLight('light2', light2Pos, scene)
 
-  const city = makeCity(32, 24, scene)
-  const spider = makeSpider(scene)
+  const city = makeCity(48, 32, scene)
+  const loadout = {
+    body: 'lego',
+    lwing: 'rocket',
+    rwing: 'rocket',
+    fang: 'mg',
+    tail: 'railgun',
+    legs: 'legs',
+  }
+  const spider = makeSpider(loadout, scene)
+  window.spider = spider
   return scene
 }
 
