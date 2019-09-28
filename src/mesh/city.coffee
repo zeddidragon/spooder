@@ -8,18 +8,18 @@ makeCity = (scene, w, h) ->
   spacing = 1.65
 
   city = BABYLON.MeshBuilder.CreatePlane 'city',
-    width: w * block * spacing
-    height: h * block * spacing
+    width: (w + 1) * block * spacing
+    height: (h + 1) * block * spacing
     scene
   city.rotation.x = Math.PI * .5
 
   for j in [0...h]
     for i in [0...w]
       continue if random() > 0.8
-      continue if i >= Math.floor(w * 0.5) and i <= Math.ceil w * 0.5
-      continue if j >= Math.floor(h * 0.5) and j <= Math.ceil h * 0.5
+      continue if i >= Math.floor(w * 0.5 - 0.1) and i <= Math.ceil(w * 0.5)
+      continue if j >= Math.floor(h * 0.5 - 0.1) and j <= Math.ceil(h * 0.5)
       height = Math.log10(random() * 100) + random() + 1
-      height *= 2 if random() > 0.9
+      height *= 2 if random() > 0.94
       color = new BABYLON.Color4 rgb(), rgb(), rgb()
       building = BABYLON.MeshBuilder.CreateBox "block#{i},#{j}",
         width: block

@@ -1,6 +1,6 @@
-makeSpooder = (scene) ->
-  BABYLON.MeshBuilder.CreateBox 'box',
+makeSpider = (scene) ->
+  BABYLON.MeshBuilder.CreateBox 'spider',
     { }
     scene
 
-export default makeSpooder
+export default makeSpider
