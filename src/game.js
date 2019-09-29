@@ -1,5 +1,6 @@
 import makeCity from './mesh/city.js'
 import makeSpider from './mesh/spider.js'
+import updateFps from './dbg/fps.js'
 
 const canvas = document.getElementById('render-canvas')
 const engine = new BABYLON.Engine(canvas, true)
@@ -21,7 +22,7 @@ function createScene() {
   const light2Pos = new BABYLON.Vector3(0, 50, -50)
   const light2 = new BABYLON.PointLight('light2', light2Pos, scene)
 
-  const city = makeCity(48, 32, scene)
+  const city = makeCity(96, 64, scene)
   const loadout = {
     body: 'lego',
     lwing: 'rocket',
@@ -32,12 +33,15 @@ function createScene() {
   }
   const spider = makeSpider(loadout, scene)
   window.spider = spider
+
   return scene
 }
 
 const scene = createScene()
 engine.runRenderLoop(scene.render.bind(scene))
 window.addEventListener('resize', () => engine.resize())
+
+updateFps(engine)
 
 window.scene = scene
 window.camera = scene.cameras[0]

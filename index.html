@@ -18,11 +18,30 @@
           height: 100%;
           touch-action: none;
         }
+
+        #debug {
+          display: none;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          touch-action: none;
+        }
+
+        #debug-fps {
+          color: white;
+          background: black;
+          width: 1.5em;
+          padding: 0.2em;
+        }
     </style>
     <script type="text/javascript" src="https://cdn.babylonjs.com/babylon.js"></script>
     <script type="module" src="src/game.js"></script>
   </head>
   <body>
+    <div id="debug">
+      <div id="debug-fps"></div>
+    </div>
     <canvas id="render-canvas" touch-action="none"></canvas>
   </body>
 </html>
